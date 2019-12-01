@@ -77,7 +77,7 @@ namespace WebAPI.Controllers
 
             return BadRequest(result.Message);
         }
-        [HttpPost("add")]
+        [HttpPost("delete")]
         public IActionResult Delete(Product product)
         {
             var result = _productService.Delete(product);
