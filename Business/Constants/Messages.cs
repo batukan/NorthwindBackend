@@ -1,9 +1,4 @@
-﻿using Core.Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Business.Contants
+﻿namespace Business.Constants
 {
     public class Messages
     {

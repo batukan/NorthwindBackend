@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Business.Abstract;
-using Business.Contants;
+using Business.Constants;
 using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using Core.Utilities.Security.Hashing;
@@ -14,7 +14,7 @@ namespace Business.Concrete
     public class AuthService : IAuthService
     {
         private readonly IUserService _userService;
-        private ITokenHelper _tokenHelper;
+        private readonly ITokenHelper _tokenHelper;
 
         public AuthService(IUserService userService, ITokenHelper tokenHelper)
         {
