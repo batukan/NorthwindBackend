@@ -30,6 +30,14 @@ namespace Core.Utilities.Security.Jwt
         {
             var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
             var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
+            var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials, operationClaims);
+            var jtwSecurityTokenHandler = new JwtSecurityTokenHandler();
+            var token = jtwSecurityTokenHandler.WriteToken(jwt);
+            return new AccessToken
+            {
+                Token = token,
+                Expiration = _accessTokenExpiration
+            };
 
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,6 +10,13 @@ namespace Business.Contants
         public static string ProductAdded = "product added successfully";
         public static string ProductDeleted = "product deleted successfully";
         public static string ProductUpdated = "product updated successfully";
+        public static string UserNotFound = "user not found";
+        public static string PasswordError = "password error";
+        public static string SuccessfulLogin = "login successful";
+        public static string UserExists = "user is already exists";
+        public static string UserRegistered = "user registered successful";
+        public static string AccessTokenCreated = "access token created";
+        
 
     }
 }
