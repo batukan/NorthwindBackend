@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Constants;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +22,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getall")]
+        [Authorize(Roles = "Category.List")]
         public IActionResult GetList()
         {
             var result = _categoryService.GetList();
