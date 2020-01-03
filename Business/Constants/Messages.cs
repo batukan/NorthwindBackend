@@ -11,7 +11,6 @@
         public static string UserExists = "user is already exists";
         public static string UserRegistered = "user registered successful";
         public static string AccessTokenCreated = "access token created";
-        
-
+        public static string AuthorizationDenied = "authorization denied";
     }
 }
