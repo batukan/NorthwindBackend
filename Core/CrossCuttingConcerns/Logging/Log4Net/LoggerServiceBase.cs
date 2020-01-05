@@ -19,7 +19,6 @@ namespace Core.CrossCuttingConcerns.Logging.Log4Net
 
             ILoggerRepository loggerRepository = LogManager.CreateRepository(Assembly.GetEntryAssembly(),
                 typeof(log4net.Repository.Hierarchy.Hierarchy));
-
             log4net.Config.XmlConfigurator.Configure(loggerRepository, xmlDocument["log4net"]);
 
             _log = LogManager.GetLogger(loggerRepository.Name, name);
