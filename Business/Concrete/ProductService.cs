@@ -26,11 +26,11 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(ProductValidator), Priority = 1)]
         [CacheRemoveAspect("IProductService.Get")]
-        public IResult Add(Product product)
+        public IResult Add(Product product) 
         {
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);
-        }
+        } 
 
         public IResult Delete(Product product)
         {
@@ -43,13 +43,14 @@ namespace Business.Concrete
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
         }
         [PerformanceAspect(interval: 5)]
+        [LogAspect(typeof(FileLogger))]
         public IDataResult<List<Product>> GetList()
         {
             return new SuccessDataResult<List<Product>>(_productDal.GetList().ToList());
         }
 
         [SecuredOperation("Product.List,Admin")]
-        [LogAspect(typeof(FileLogger))]
+        [LogAspect(typeof(DatabaseLogger))]
         [CacheAspect(duration: 10)]        
         public IDataResult<List<Product>> GetListByCategory(int categoryId)
         {
