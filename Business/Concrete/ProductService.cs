@@ -42,6 +42,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
         }
+        
         [PerformanceAspect(interval: 5)]
         [LogAspect(typeof(FileLogger))]
         public IDataResult<List<Product>> GetList()
