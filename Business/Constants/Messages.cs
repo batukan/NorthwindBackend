@@ -12,5 +12,6 @@
         public static string UserRegistered = "user registered successful";
         public static string AccessTokenCreated = "access token created";
         public static string AuthorizationDenied = "authorization denied";
+        public static string ProductNameAlreadyExists = "product name already exists";
     }
 }
